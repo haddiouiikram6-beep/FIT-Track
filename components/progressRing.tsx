@@ -1,6 +1,7 @@
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
+
 
 export default function ProgressRing() {
     return (
@@ -9,12 +10,16 @@ export default function ProgressRing() {
                 size={180}
                 width={15}
                 fill={75}
-                tintColor="#1f786a"
-                backgroundColor="#e0e0e0"
+                tintColor="#fcb500"
+                backgroundColor="#fdf8f8"
                 duration={1500}
                 rotation={0}
             >
-                {(fill: number) => <>{Math.round(fill)}%</>}
+                {(fill: number) => (
+                    <Text style={{ fontSize: 30, fontWeight: "bold" }}>
+                        {Math.round(fill)}%
+                    </Text>
+                )}
             </AnimatedCircularProgress>
         </View>
     );
